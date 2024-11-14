@@ -67,7 +67,7 @@ const tampilkanKaryawan = () => {
 
 // mengakses dom
 const tabelKaryawan = document.getElementById('tabelKaryawan')
-tabelKaryawan.innerHTML = `<tr><th>No</th><th>Nama</th><th>Masa Kerja</th><th>Nomor Induk</th><th>Gaji</th><th>Edit</th><th>Hapus</th></tr>`
+tabelKaryawan.innerHTML = `<tr><th>No</th><th>Nama</th><th>Masa Kerja</th><th>Nomor Induk</th><th>Gaji</th><th>Hapus</th><th>Edit</th></tr>`
 
 
     for (let index in daftarKaryawan){
@@ -78,12 +78,12 @@ tabelKaryawan.innerHTML = `<tr><th>No</th><th>Nama</th><th>Masa Kerja</th><th>No
 }
 
 const tambahKaryawan = () => {
-    const nama = document.getElementById('textnama').value
-    const masaKerja = document.getElementById('textmasaKerja').value
-    const nomorInduk = document.getElementById('textnomorInduk').value
-    const gaji = document.getElementById('textgaji').value
+    const nama = document.getElementById('textNama').value
+    const masaKerja = document.getElementById('textMasaKerja').value
+    const nomorInduk = document.getElementById('textNomorInduk').value
+    const gaji = document.getElementById('textGaji').value
 
-    const karyawanBaru ={
+    const karyawanBaru = {
         nama : nama,
         masaKerja: masaKerja,
         nomorInduk: nomorInduk,
@@ -96,14 +96,14 @@ const tambahKaryawan = () => {
     } else{
         daftarKaryawan[mode] = karyawanBaru
     }
-    document.getElementById('textnama').value =""
-    document.getElementById('textmasaKerja').value =""
-    document.getElementById('textnomorInduk').value =""
-    document.getElementById('textgaji').value =""
+    document.getElementById('textNama').value =""
+    document.getElementById('textMasaKerja').value =""
+    document.getElementById('textNomorInduk').value =""
+    document.getElementById('textGaji').value =""
 
     mode = 'tambah'
 
-    tambahKaryawan()
+    tampilkanKaryawan()
 
 }
 
@@ -129,10 +129,10 @@ const editKaryawan = (target) => {
     const karyawanEdit = cariKaryawan(target)
     const karyawanDiedit = daftarKaryawan[karyawanEdit];
 
-    document.getElementById('textnama').value = karyawanDiedit.nama
-    document.getElementById('textmasaKerja').value = karyawanDiedit.masaKerja
-    document.getElementById('textnomorInduk').value = karyawanDiedit.nomorInduk
-    document.getElementById('textgaji').value = karyawanDiedit.gaji
+    document.getElementById('textNama').value = karyawanDiedit.nama
+    document.getElementById('textMasaKerja').value = karyawanDiedit.masaKerja
+    document.getElementById('textNomorInduk').value = karyawanDiedit.nomorInduk
+    document.getElementById('textGaji').value = karyawanDiedit.gaji
     
     mode = karyawanEdit
 }
